@@ -1,0 +1,4 @@
+clear
+make clean 
+make all
+./bin/memoria "/home/utnso/tp-2024-1c-Los-Messistemas/memoria/memoria.config"  

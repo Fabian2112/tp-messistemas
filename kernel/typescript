@@ -1,0 +1,274 @@
+Script started on 2024-06-10 18:52:08+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="128" LINES="11"]
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::a00:27ff:fefb:b835  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:fb:b8:35  txqueuelen 1000  (Ethernet)
+        RX packets 30869  bytes 43225301 (43.2 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4374  bytes 1749949 (1.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 307  bytes 46483 (46.4 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 307  bytes 46483 (46.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[?2004h]0;utnso@utnso: ~/tp-2024-1c-Los-Messistemas/kernel[01;32mutnso@utnso[00m:[01;34m~/tp-2024-1c-Los-Messistemas/kernel[00m$ ./script
+[?2004l[H[2J[3Jrm -rfv obj bin
+removed 'obj/kernel_memoria.o'
+removed 'obj/desalojador.o'
+removed 'obj/planificador_largo_plazo.o'
+removed 'obj/kernel_cpuInt.o'
+removed 'obj/servicios_kernel.o'
+removed 'obj/consola.o'
+removed 'obj/planificador_corto_plazo.o'
+removed 'obj/kernel_cpuDisp.o'
+removed 'obj/k_gestor.o'
+removed 'obj/kernel.o'
+removed 'obj/kernel_es.o'
+removed 'obj/inicializar_kernel.o'
+removed directory 'obj'
+removed 'bin/kernel'
+removed directory 'bin'
+mkdir -pv obj/
+mkdir: created directory 'obj/'
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/k_gestor.o" src/k_gestor.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/planificador_largo_plazo.o" src/planificador_largo_plazo.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel_cpuInt.o" src/kernel_cpuInt.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/servicios_kernel.o" src/servicios_kernel.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/consola.o" src/consola.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel_memoria.o" src/kernel_memoria.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel_cpuDisp.o" src/kernel_cpuDisp.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/planificador_corto_plazo.o" src/planificador_corto_plazo.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/inicializar_kernel.o" src/inicializar_kernel.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel.o" src/kernel.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel_es.o" src/kernel_es.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/desalojador.o" src/desalojador.c -I../utils/src -I./src
+[01m[Ksrc/desalojador.c:[m[K In function ‘[01m[Kdesalojador_round_robin[m[K’:
+[01m[Ksrc/desalojador.c:11:17:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KactualizarContextoEjecucion[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+   11 |                 [01;35m[KactualizarContextoEjecucion[m[K(fd_cpu_interrupt);
+      |                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Ksrc/desalojador.c:[m[K At top level:
+[01m[Ksrc/desalojador.c:20:1:[m[K [01;35m[Kwarning: [m[Kreturn type defaults to ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-int-Wimplicit-int]8;;[m[K]
+   20 | [01;35m[KactualizarContextoEjecucion[m[K(socket){
+      | [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Ksrc/desalojador.c:[m[K In function ‘[01m[KactualizarContextoEjecucion[m[K’:
+[01m[Ksrc/desalojador.c:20:1:[m[K [01;35m[Kwarning: [m[Ktype of ‘[01m[Ksocket[m[K’ defaults to ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-int-Wimplicit-int]8;;[m[K]
+[01m[Ksrc/desalojador.c:23:52:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kint[m[K’ from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   23 |                 proceso_ejecutando->programCounter [01;35m[K=[m[K list_get(partes_pcb, 0);
+      |                                                    [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:24:46:[m[K [01;31m[Kerror: [m[Kincompatible types when assigning to type ‘[01m[Kt_estado[m[K’ from type ‘[01m[Kvoid *[m[K’
+   24 |                 proceso_ejecutando->estado = [01;31m[Klist_get[m[K(partes_pcb, 1);
+      |                                              [01;31m[K^~~~~~~~[m[K
+[01m[Ksrc/desalojador.c:25:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   25 |                 proceso_ejecutando->registros_cpu->AX [01;35m[K=[m[K list_get(partes_pcb, 2);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:26:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   26 |                 proceso_ejecutando->registros_cpu->BX [01;35m[K=[m[K list_get(partes_pcb, 3);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:27:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   27 |                 proceso_ejecutando->registros_cpu->CX [01;35m[K=[m[K list_get(partes_pcb, 4);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:28:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   28 |                 proceso_ejecutando->registros_cpu->DX [01;35m[K=[m[K list_get(partes_pcb, 5);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:29:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   29 |                 proceso_ejecutando->registros_cpu->PC [01;35m[K=[m[K list_get(partes_pcb, 6);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:30:56:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   30 |                 proceso_ejecutando->registros_cpu->EAX [01;35m[K=[m[K list_get(partes_pcb, 7);
+      |                                                        [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:31:56:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   31 |                 proceso_ejecutando->registros_cpu->EBX [01;35m[K=[m[K list_get(partes_pcb, 8);
+      |                                                        [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:32:56:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   32 |                 proceso_ejecutando->registros_cpu->ECX [01;35m[K=[m[K list_get(partes_pcb, 9);
+      |                                                        [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:33:56:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   33 |                 proceso_ejecutando->registros_cpu->EDX [01;35m[K=[m[K list_get(partes_pcb, 10);
+      |                                                        [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:34:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   34 |                 proceso_ejecutando->registros_cpu->SI [01;35m[K=[m[K list_get(partes_pcb, 11);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:35:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   35 |                 proceso_ejecutando->registros_cpu->DI [01;35m[K=[m[K list_get(partes_pcb, 12);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:36:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+   36 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+make: *** [makefile:42: obj/desalojador.o] Error 1
+./script: line 4: ./bin/kernel: No such file or directory
+[?2004h]0;utnso@utnso: ~/tp-2024-1c-Los-Messistemas/kernel[01;32mutnso@utnso[00m:[01;34m~/tp-2024-1c-Los-Messistemas/kernel[00m$ cd 
+[?2004l[?2004h]0;utnso@utnso: ~[01;32mutnso@utnso[00m:[01;34m~[00m$ cd tp-2024-1c-Los-Messistemas/
+[?2004l[?2004h]0;utnso@utnso: ~/tp-2024-1c-Los-Messistemas[01;32mutnso@utnso[00m:[01;34m~/tp-2024-1c-Los-Messistemas[00m$ ./compilate 
+[?2004lbash: ./compilate: usr/bin/sh: bad interpreter: No such file or directory
+[?2004h]0;utnso@utnso: ~/tp-2024-1c-Los-Messistemas[01;32mutnso@utnso[00m:[01;34m~/tp-2024-1c-Los-Messistemas[00m$ ./compilate 
+[?2004l[H[2J[3J./compilate: line 3: cd: Debug: No such file or directory
+rm -rfv obj bin
+removed 'obj/memoria.o'
+removed 'obj/memoria_kernel.o'
+removed 'obj/inicializar_memoria.o'
+removed 'obj/memoria_entsal.o'
+removed 'obj/m_gestor.o'
+removed 'obj/mem_instrucciones.o'
+removed 'obj/memoria_cpu.o'
+removed directory 'obj'
+removed 'bin/memoria'
+removed directory 'bin'
+mkdir -pv obj/
+mkdir: created directory 'obj/'
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/m_gestor.o" src/m_gestor.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/memoria_cpu.o" src/memoria_cpu.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/memoria.o" src/memoria.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/memoria_entsal.o" src/memoria_entsal.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/mem_instrucciones.o" src/mem_instrucciones.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/inicializar_memoria.o" src/inicializar_memoria.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/memoria_kernel.o" src/memoria_kernel.c -I../utils/src -I./src
+mkdir -pv bin/
+mkdir: created directory 'bin/'
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -o "bin/memoria" obj/m_gestor.o obj/memoria_cpu.o obj/memoria.o obj/memoria_entsal.o obj/mem_instrucciones.o obj/inicializar_memoria.o obj/memoria_kernel.o -I../utils/src -I./src -L../utils/bin -lutils -lcommons -lpthread -lreadline -lm
+./compilate: line 8: cd: cpu: No such file or directory
+rm -rfv obj bin
+removed 'obj/memoria.o'
+removed 'obj/memoria_kernel.o'
+removed 'obj/inicializar_memoria.o'
+removed 'obj/memoria_entsal.o'
+removed 'obj/m_gestor.o'
+removed 'obj/mem_instrucciones.o'
+removed 'obj/memoria_cpu.o'
+removed directory 'obj'
+removed 'bin/memoria'
+removed directory 'bin'
+mkdir -pv obj/
+mkdir: created directory 'obj/'
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/m_gestor.o" src/m_gestor.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/memoria_cpu.o" src/memoria_cpu.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/memoria.o" src/memoria.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/memoria_entsal.o" src/memoria_entsal.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/mem_instrucciones.o" src/mem_instrucciones.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/inicializar_memoria.o" src/inicializar_memoria.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/memoria_kernel.o" src/memoria_kernel.c -I../utils/src -I./src
+mkdir -pv bin/
+mkdir: created directory 'bin/'
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -o "bin/memoria" obj/m_gestor.o obj/memoria_cpu.o obj/memoria.o obj/memoria_entsal.o obj/mem_instrucciones.o obj/inicializar_memoria.o obj/memoria_kernel.o -I../utils/src -I./src -L../utils/bin -lutils -lcommons -lpthread -lreadline -lm
+./compilate: line 15: cd: Debug: No such file or directory
+rm -rfv obj bin
+removed 'obj/kernel_memoria.o'
+removed 'obj/planificador_largo_plazo.o'
+removed 'obj/kernel_cpuInt.o'
+removed 'obj/servicios_kernel.o'
+removed 'obj/consola.o'
+removed 'obj/planificador_corto_plazo.o'
+removed 'obj/kernel_cpuDisp.o'
+removed 'obj/k_gestor.o'
+removed 'obj/kernel.o'
+removed 'obj/kernel_es.o'
+removed 'obj/inicializar_kernel.o'
+removed directory 'obj'
+mkdir -pv obj/
+mkdir: created directory 'obj/'
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/k_gestor.o" src/k_gestor.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/planificador_largo_plazo.o" src/planificador_largo_plazo.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel_cpuInt.o" src/kernel_cpuInt.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/servicios_kernel.o" src/servicios_kernel.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/consola.o" src/consola.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel_memoria.o" src/kernel_memoria.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel_cpuDisp.o" src/kernel_cpuDisp.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/planificador_corto_plazo.o" src/planificador_corto_plazo.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/inicializar_kernel.o" src/inicializar_kernel.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel.o" src/kernel.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/kernel_es.o" src/kernel_es.c -I../utils/src -I./src
+gcc -g -Wall -DDEBUG -fdiagnostics-color=always -c -o "obj/desalojador.o" src/desalojador.c -I../utils/src -I./src
+[01m[Ksrc/desalojador.c:[m[K In function ‘[01m[Kdesalojador_round_robin[m[K’:
+[01m[Ksrc/desalojador.c:11:17:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[KactualizarContextoEjecucion[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+   11 |                 [01;35m[KactualizarContextoEjecucion[m[K(fd_cpu_interrupt);
+      |                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Ksrc/desalojador.c:[m[K At top level:
+[01m[Ksrc/desalojador.c:20:1:[m[K [01;35m[Kwarning: [m[Kreturn type defaults to ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-int-Wimplicit-int]8;;[m[K]
+   20 | [01;35m[KactualizarContextoEjecucion[m[K(socket){
+      | [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Ksrc/desalojador.c:[m[K In function ‘[01m[KactualizarContextoEjecucion[m[K’:
+[01m[Ksrc/desalojador.c:20:1:[m[K [01;35m[Kwarning: [m[Ktype of ‘[01m[Ksocket[m[K’ defaults to ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-int-Wimplicit-int]8;;[m[K]
+[01m[Ksrc/desalojador.c:23:52:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kint[m[K’ from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   23 |                 proceso_ejecutando->programCounter [01;35m[K=[m[K list_get(partes_pcb, 0);
+      |                                                    [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:24:46:[m[K [01;31m[Kerror: [m[Kincompatible types when assigning to type ‘[01m[Kt_estado[m[K’ from type ‘[01m[Kvoid *[m[K’
+   24 |                 proceso_ejecutando->estado = [01;31m[Klist_get[m[K(partes_pcb, 1);
+      |                                              [01;31m[K^~~~~~~~[m[K
+[01m[Ksrc/desalojador.c:25:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   25 |                 proceso_ejecutando->registros_cpu->AX [01;35m[K=[m[K list_get(partes_pcb, 2);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:26:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   26 |                 proceso_ejecutando->registros_cpu->BX [01;35m[K=[m[K list_get(partes_pcb, 3);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:27:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   27 |                 proceso_ejecutando->registros_cpu->CX [01;35m[K=[m[K list_get(partes_pcb, 4);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:28:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint8_t[m[K’ {aka ‘[01m[Kunsigned char[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   28 |                 proceso_ejecutando->registros_cpu->DX [01;35m[K=[m[K list_get(partes_pcb, 5);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:29:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   29 |                 proceso_ejecutando->registros_cpu->PC [01;35m[K=[m[K list_get(partes_pcb, 6);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:30:56:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   30 |                 proceso_ejecutando->registros_cpu->EAX [01;35m[K=[m[K list_get(partes_pcb, 7);
+      |                                                        [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:31:56:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   31 |                 proceso_ejecutando->registros_cpu->EBX [01;35m[K=[m[K list_get(partes_pcb, 8);
+      |                                                        [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:32:56:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   32 |                 proceso_ejecutando->registros_cpu->ECX [01;35m[K=[m[K list_get(partes_pcb, 9);
+      |                                                        [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:33:56:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   33 |                 proceso_ejecutando->registros_cpu->EDX [01;35m[K=[m[K list_get(partes_pcb, 10);
+      |                                                        [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:34:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   34 |                 proceso_ejecutando->registros_cpu->SI [01;35m[K=[m[K list_get(partes_pcb, 11);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:35:55:[m[K [01;35m[Kwarning: [m[Kassignment to ‘[01m[Kuint32_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} from ‘[01m[Kvoid *[m[K’ makes integer from pointer without a cast [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]8;;[m[K]
+   35 |                 proceso_ejecutando->registros_cpu->DI [01;35m[K=[m[K list_get(partes_pcb, 12);
+      |                                                       [01;35m[K^[m[K
+[01m[Ksrc/desalojador.c:36:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+   36 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+make: *** [makefile:42: obj/desalojador.o] Error 1
+./compilate: line 20: cd: filesystem: No such file or directory
+./compilate: line 21: cd: Debug: No such file or directory
+make: *** No rule to make target 'clean'.  Stop.
+make: *** No rule to make target 'all'.  Stop.
+
+Compilation completed.
+[?2004h]0;utnso@utnso: ~/tp-2024-1c-Los-Messistemas[01;32mutnso@utnso[00m:[01;34m~/tp-2024-1c-Los-Messistemas[00m$ gi [Kt add. 
+[?2004lgit: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+[?2004h]0;utnso@utnso: ~/tp-2024-1c-Los-Messistemas[01;32mutnso@utnso[00m:[01;34m~/tp-2024-1c-Los-Messistemas[00m$ git add .
+[?2004l[?2004h]0;utnso@utnso: ~/tp-2024-1c-Los-Messistemas[01;32mutnso@utnso[00m:[01;34m~/tp-2024-1c-Los-Messistemas[00m$ git status
+[?2004lOn branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   compilate[m
+	[32mnew file:   cpu/script[m
+	[32mnew file:   entradasalida/script[m
+	[32mnew file:   kernel/typescript[m
+
+[?2004h]0;utnso@utnso: ~/tp-2024-1c-Los-Messistemas[01;32mutnso@utnso[00m:[01;34m~/tp-2024-1c-Los-Messistemas[00m$ git commit -n[Km "SUbieno[K[K[K[K[K[Kueb[K[Kbiendo archivos para compilaci´+o[K[K[Kón" [K[K[K[Ki[Kon" 
+[?2004l[main 55a67ad] Subiendo archivos para compilacion
+ 4 files changed, 262 insertions(+)
+ create mode 100755 compilate
+ create mode 100644 cpu/script
+ create mode 100644 entradasalida/script
+ create mode 100644 kernel/typescript
+[?2004h]0;utnso@utnso: ~/tp-2024-1c-Los-Messistemas[01;32mutnso@utnso[00m:[01;34m~/tp-2024-1c-Los-Messistemas[00m$ git push
+[?2004lEnumerating objects: 18, done.
+Counting objects:   5% (1/18)Counting objects:  11% (2/18)Counting objects:  16% (3/18)Counting objects:  22% (4/18)Counting objects:  27% (5/18)Counting objects:  33% (6/18)Counting objects:  38% (7/18)Counting objects:  44% (8/18)Counting objects:  50% (9/18)Counting objects:  55% (10/18)Counting objects:  61% (11/18)Counting objects:  66% (12/18)Counting objects:  72% (13/18)Counting objects:  77% (14/18)Counting objects:  83% (15/18)Counting objects:  88% (16/18)Counting objects:  94% (17/18)Counting objects: 100% (18/18)Counting objects: 100% (18/18), done.
+Compressing objects:   7% (1/13)Compressing objects:  15% (2/13)Compressing objects:  23% (3/13)Compressing objects:  30% (4/13)Compressing objects:  38% (5/13)Compressing objects:  46% (6/13)Compressing objects:  53% (7/13)Compressing objects:  61% (8/13)Compressing objects:  69% (9/13)Compressing objects:  76% (10/13)Compressing objects:  84% (11/13)Compressing objects:  92% (12/13)Compressing objects: 100% (13/13)Compressing objects: 100% (13/13), done.
+Writing objects:   7% (1/13)Writing objects:  15% (2/13)Writing objects:  23% (3/1

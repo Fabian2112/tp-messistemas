@@ -1,0 +1,5 @@
+clear
+make clean 
+make all
+valgrind ./bin/kernel
+./bin/kernel "/home/utnso/tp-2024-1c-Los-Messistemas/kernel/kernel.config"  

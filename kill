@@ -1,0 +1,3 @@
+pkill xterm
+sleep 2
+sudo ss -tuln

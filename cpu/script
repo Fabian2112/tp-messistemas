@@ -1,0 +1,6 @@
+clear
+make clean 
+make all
+
+valgrind ./bin/cpu
+./bin/cpu "/home/utnso/tp-2024-1c-Los-Messistemas/cpu/cpu.config"  

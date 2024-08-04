@@ -1,0 +1,33 @@
+{
+	"settings": {
+		"debug.onTaskErrors": "abort",
+		"files.associations": {
+			"*.h": "c",
+		},
+		"C_Cpp.errorSquiggles": "disabled",
+		"editor.wordWrap": "on",
+		"github.gitAuthentication": false,
+	},
+	"folders": [
+		{
+			"path": "kernel"
+		},
+		{
+			"path": "cpu"
+		},
+		{
+			"path": "memoria"
+		},
+		{
+			"path": "entradasalida"
+		},
+		{
+			"path": "utils"
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools"
+		]
+	}
+}

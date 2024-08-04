@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Definir los comandos para cada módulo
+MODULE1="cd memoria && ./script"
+MODULE2="cd cpu && ./script"
+MODULE3="cd kernel && ./script"
+MODULE4="cd entradasalida && ./script"
+
+# Tamaño de las ventanas
+WIDTH=70
+HEIGHT=22
+
+# Abrir cada módulo en una nueva terminal en posiciones específicas
+xterm -T "Memoria" -n "Memoria" -geometry ${WIDTH}x${HEIGHT}+0+0 -hold -e "$MODULE1" &        # Esquina superior izquierda
+xterm -T "CPU" -n "CPU" -geometry ${WIDTH}x${HEIGHT}-0+0 -hold -e "$MODULE2" &                # Esquina superior derecha
+xterm -T "Kernel" -n "Kernel" -geometry ${WIDTH}x${HEIGHT}+360+180 -hold -e "$MODULE3" &          # Esquina inferior izquierda
+xterm -T "IO" -n "IO" -geometry ${WIDTH}x${HEIGHT}-0-0 -hold -e "$MODULE4" &                  # Esquina inferior derecha
